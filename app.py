@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 # To render Homepage
 @app.route('/', methods=['GET', 'POST']) 
-def homepage():
+def home_page():
     return render_template('index.html')
 
 @app.route('/math', methods=['POST'])  # This will be called from UI
@@ -51,8 +51,7 @@ def math_operation_via_postman():
             result= 'The product of '+str(num1)+' and '+str(num2) + ' is '+str(output)            
         
         if(operation=='divide'):
-            output = num1 / num2
-         
+            output = num1 / num2     
         return jsonify(result)
 
 
